@@ -1,5 +1,9 @@
 Changelog for OrphoMan.
 
+1.0.0-rc1
+==============
+- Add the setting "auto_delete"
+
 1.0.0-rc
 ==============
 - Initial release

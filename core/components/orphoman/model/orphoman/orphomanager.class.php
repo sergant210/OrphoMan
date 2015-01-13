@@ -80,19 +80,22 @@ class OrphoManager {
 		$c->select('id,resource_id,text,ip,comment,createdon');
 		$c->where(array('resource_id' => $id));
 		$words = $highlighted_words = $mustdelete = array();
+		$auto_delete = $this->modx->getOption('orphoman.auto_delete',null,1);
 		$tpl = $this->modx->getOption('orphoman.tpl',null,'<span style="background-color:red;">{text}</span>');
 		if ($c->prepare() && $c->stmt->execute()) {
 			while ($row = $c->stmt->fetch(PDO::FETCH_ASSOC)) {
-				$exists = strpos($output, $row['text']);
-				if ($exists === FALSE) {
-					$mustdelete[] = $row['id'];
-					continue;
+				if ($auto_delete) {
+					$exists = strpos($output, $row['text']);
+					if ($exists === FALSE) {
+						$mustdelete[] = $row['id'];
+						continue;
+					}
 				}
 				$words[] = $row['text'];
 				$highlighted_words[] = str_replace('{text}', $row['text'], $tpl);
 			}
 		}
-		//Удаляем слова, которых уже нет в контенте, т.е. исправлены.
+		//Удаляем слова, которых уже нет в контенте, предполагаем что исправлены.
 		if (!empty($mustdelete)) {
 			$c = $this->modx->newQuery("OrphoMan");
 			$c->command('delete');

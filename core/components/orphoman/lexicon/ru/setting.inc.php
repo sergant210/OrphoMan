@@ -12,3 +12,5 @@ $_lang['setting_orphoman.email_subject'] = 'Заголовок письма';
 $_lang['setting_orphoman.email_subject_desc'] = 'Заголовок письма об ошибке.';
 $_lang['setting_orphoman.email_body'] = 'Текст письма';
 $_lang['setting_orphoman.email_body_desc'] = 'Текст письма об ошибке.';
+$_lang['setting_orphoman.highlight'] = 'Автоудаление исправленных слов';
+$_lang['setting_orphoman.highlight_desc'] = 'Автоматическое удаление исправленных (не найденных в контенте) слов.';

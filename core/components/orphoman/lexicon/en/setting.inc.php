@@ -12,3 +12,5 @@ $_lang['setting_orphoman.email_subject'] = 'Email subject';
 $_lang['setting_orphoman.email_subject_desc'] = 'Email subject about a mistake.';
 $_lang['setting_orphoman.email_body'] = 'Email body';
 $_lang['setting_orphoman.email_body_desc'] = 'Email body about a mistake.';
+$_lang['setting_orphoman.highlight'] = 'Autoremove';
+$_lang['setting_orphoman.highlight_desc'] = 'Automatic remove the fixed mistakes.';
