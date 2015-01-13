@@ -28,6 +28,11 @@ $tmp = array(
 		'value' => 'На странице <a href="{id}">{pagetitle}</a> найдена ошибка - "{error}".',
 		'area' => 'orphoman.main',
 	),
+	'auto_delete' => array(
+		'xtype' => 'combo-boolean',
+		'value' => true,
+		'area' => 'orphoman.main',
+	),
 
 );
 
