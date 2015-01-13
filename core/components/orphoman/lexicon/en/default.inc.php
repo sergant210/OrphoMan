@@ -12,6 +12,7 @@ $_lang['orphoman_intro_msg'] = 'Spelling mistakes list.';
 
 $_lang['orphoman_items'] = 'Spelling mistakes list';
 $_lang['orphoman_item_resource_id'] = 'Resource id';
+$_lang['orphoman_item_resource_url'] = 'Resource';
 $_lang['orphoman_item_text'] = 'Text of mistake';
 $_lang['orphoman_item_comment'] = 'Comment';
 $_lang['orphoman_item_ip'] = 'Sender ip';

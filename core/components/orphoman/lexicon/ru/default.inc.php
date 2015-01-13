@@ -8,6 +8,7 @@ $_lang['orphoman_intro_msg'] = 'Список орфографических ош
 
 $_lang['orphoman_items'] = 'Список ошибок';
 $_lang['orphoman_item_resource_id'] = 'Id ресурса';
+$_lang['orphoman_item_resource_url'] = 'Ресурс';
 $_lang['orphoman_item_text'] = 'Текст';
 $_lang['orphoman_item_comment'] = 'Комментарий';
 $_lang['orphoman_item_ip'] = 'ip отправителя';

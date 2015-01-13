@@ -119,6 +119,9 @@ class OrphoManager {
 		$data['text'] = $this->modx->sanitizeString(trim($data['text']));
 		$data['comment'] = $this->modx->sanitizeString(trim($data['comment']));
 		$data['resource'] = intval($data['resource']);
+		//$resource_url = $this->modx->makeUrl($data['resource'],'mgr','','full');
+		$resource_url = MODX_MANAGER_URL . 'index.php?a=resource/update&id=' . $data['resource'];
+		//?a=resource/update&id=1
 		$OrphoMan = $this->modx->newObject('OrphoMan');
 		$OrphoMan->fromArray(
 			array(
@@ -126,7 +129,8 @@ class OrphoManager {
 				'text'=>$data['text'],
 				'comment'=>$data['comment'],
 				'ip'=>$_SERVER['REMOTE_ADDR'],
-				'createdon'=>date('d.m.Y H:i:s')
+				'createdon'=>date('d.m.Y H:i:s'),
+				'resource_url'=>$resource_url
 			)
 		);
 		if (!$OrphoMan->save()) {

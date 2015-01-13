@@ -11,6 +11,7 @@ $xpdo_meta_map['OrphoMan']= array (
     'ip' => NULL,
     'createdon' => NULL,
     'comment' => NULL,
+    'resource_url' => NULL,
   ),
   'fieldMeta' => 
   array (
@@ -48,6 +49,13 @@ $xpdo_meta_map['OrphoMan']= array (
       'precision' => '250',
       'phptype' => 'string',
       'null' => true,
+    ),
+    'resource_url' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '40',
+      'phptype' => 'string',
+      'null' => false,
     ),
   ),
   'indexes' => 

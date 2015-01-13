@@ -11,7 +11,7 @@
 			dialog.close();
 			$.post(orphoConfig.actionUrl, {action: 'save', text: $('#error_text').text(), comment: $('input[name=comment]').val(),resource: orphoConfig.resource}, function(response) {
 				if (response.success == false ) {
-					alert('Ошибка');
+					Selection.message(response.message);
 				}
 			},'json');
 		});

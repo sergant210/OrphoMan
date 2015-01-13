@@ -97,15 +97,16 @@ Ext.extend(OrphoMan.grid.Items, MODx.grid.Grid, {
 	},
 
 	getFields: function (config) {
-		return ['id', 'resource_id', 'text', 'ip', 'createdon', 'comment','actions'];
+		return ['id', 'resource_id', 'resource_url','text', 'ip', 'createdon', 'comment','actions'];
 	},
 
 	getColumns: function (config) {
 		return [{
-			header: _('orphoman_item_resource_id'),
+			header: _('orphoman_item_resource_url'),
 			dataIndex: 'resource_id',
 			sortable: true,
-			width: 50
+			width: 50,
+			renderer: this.renderResourceLink
 		}, {
 			header: _('orphoman_item_text'),
 			dataIndex: 'text',
@@ -137,7 +138,14 @@ Ext.extend(OrphoMan.grid.Items, MODx.grid.Grid, {
 			id: 'actions'
 		}];
 	},
-
+	renderResourceLink: function(val,cell,row) {
+		if (row.data.resource_url) {
+			return '<a href="' + row.data.resource_url+ '" class="resource-link">' + val + '</a>'
+		}
+		else {
+			return row.data.resource_id;
+		}
+	},
 	getTopBar: function (config) {
 		return [{
 			text: '<i class="icon icon-plus">&nbsp;' + _('orphoman_item_create'),
