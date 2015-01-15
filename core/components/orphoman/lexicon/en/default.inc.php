@@ -16,7 +16,8 @@ $_lang['orphoman_item_resource_url'] = 'Resource';
 $_lang['orphoman_item_text'] = 'Text of mistake';
 $_lang['orphoman_item_comment'] = 'Comment';
 $_lang['orphoman_item_ip'] = 'Sender ip';
-$_lang['orphoman_item_createdon'] = 'Data';
+$_lang['orphoman_item_createdon'] = 'Date';
+$_lang['orphoman_grid_actions'] = '';
 
 $_lang['orphoman_item_remove'] = 'Remove row';
 $_lang['orphoman_items_remove'] = 'Remove rows';
@@ -26,4 +27,3 @@ $_lang['orphoman_items_remove_confirm'] = 'Are you sure you want to delete the r
 $_lang['orphoman_item_err_remove'] = 'An error occurred while trying to remove the row.';
 
 $_lang['orphoman_grid_search'] = 'Search';
-$_lang['orphoman_grid_actions'] = 'Actions';

@@ -155,8 +155,8 @@ class OrphoManager {
 		$subject = $this->modx->getOption('orphoman.email_subject', null, 'На сайте обнаружена ошибка');
 		$res=$this->modx->getObject('modResource',$data['resource']);
 		$pagetitle = $res->get('pagetitle');
-		$body = $this->modx->getOption('orphoman.email_body', null, 'На странице <a href="{id}">{pagetitle}</a> найдена ошибка - "{error}".');
-		$body = str_replace(array('{id}','{pagetitle}','{error}'),array($pageUrl,$pagetitle,$data['text']),$body);
+		$body = $this->modx->getOption('orphoman.email_body', null, 'На странице <a href="{id}">{pagetitle}</a> найдена ошибка - "{error}"<br>Комментарий: {comment}');
+		$body = str_replace(array('{id}','{pagetitle}','{error}','{comment}'),array($pageUrl,$pagetitle,$data['text'],$data['comment']),$body);
 
 		$mail->set(modMail::MAIL_SUBJECT, $subject);
 		$mail->set(modMail::MAIL_BODY, $body);

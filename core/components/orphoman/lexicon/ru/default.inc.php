@@ -13,6 +13,7 @@ $_lang['orphoman_item_text'] = 'Текст';
 $_lang['orphoman_item_comment'] = 'Комментарий';
 $_lang['orphoman_item_ip'] = 'ip отправителя';
 $_lang['orphoman_item_createdon'] = 'Дата';
+$_lang['orphoman_grid_actions'] = '';
 
 $_lang['orphoman_item_remove'] = 'Удалить запись';
 $_lang['orphoman_items_remove'] = 'Удалить записи';
@@ -23,4 +24,3 @@ $_lang['orphoman_item_active'] = 'Включено';
 $_lang['orphoman_item_err_remove'] = 'Ошибка удаления записи.';
 
 $_lang['orphoman_grid_search'] = 'Поиск';
-$_lang['orphoman_grid_actions'] = 'Действия';

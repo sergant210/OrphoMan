@@ -134,7 +134,7 @@ Ext.extend(OrphoMan.grid.Items, MODx.grid.Grid, {
 			dataIndex: 'actions',
 			renderer: OrphoMan.utils.renderActions,
 			sortable: false,
-			width: 50,
+			width: 20,
 			id: 'actions'
 		}];
 	},

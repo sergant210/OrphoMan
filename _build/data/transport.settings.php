@@ -25,7 +25,7 @@ $tmp = array(
 	),
 	'email_body' => array(
 		'xtype' => 'textfield',
-		'value' => 'На странице <a href="{id}">{pagetitle}</a> найдена ошибка - "{error}".',
+		'value' => 'На странице <a href="{id}">{pagetitle}</a> найдена ошибка - "{error}".<br>Комментарий: {comment}',
 		'area' => 'orphoman.main',
 	),
 	'auto_delete' => array(

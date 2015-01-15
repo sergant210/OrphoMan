@@ -10,12 +10,7 @@ if ($object->xpdo) {
 			$modx->addPackage('orphoman', $modelPath);
 
 			$manager = $modx->getManager();
-			$objects = array(
-				'OrphoMan',
-			);
-			foreach ($objects as $tmp) {
-				$manager->createObjectContainer($tmp);
-			}
+			$manager->createObjectContainer('OrphoMan');
 			break;
 
 		case xPDOTransport::ACTION_UPGRADE:
