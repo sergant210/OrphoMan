@@ -1,16 +1,47 @@
 <?php
 switch ($modx->event->name) {
 	case 'OnWebPagePrerender':
-		$highlight = $modx->getOption('orphoman.highlight',null,1);
-		if ($highlight && $modx->user->hasSessionContext('mgr')) {
-			/*
-			$modx->addPackage('orphoman',MODX_CORE_PATH.'components/orphoman/model/');
-			*/
+		if ($modx->user->hasSessionContext('mgr')) {
 			if (!$OrphoMan = $modx->getService('orphoman', 'OrphoManager', $modx->getOption('orphoman_core_path', null, $modx->getOption('core_path') . 'components/orphoman/') . 'model/orphoman/')) {
 				$modx->log(modx::LOG_LEVEL_ERROR, ' The plugin could not load OrphoMan class!');
 			} else {
+				$auto_delete = (bool) $modx->getOption('orphoman.auto_delete',null,1);
+				$highlight = (bool) $modx->getOption('orphoman.highlight',null,1);
+				$tpl = $modx->getOption('orphoman.tpl',null,'<span style="background-color:red;">{text}</span>');
+
 				$output = &$modx->resource->_output;
-				$OrphoMan->highlight($output,$modx->resource->id);
+				$c = $modx->newQuery("OrphoMan");
+				$c->select('id,resource_id,text,ip,comment,createdon');
+				$c->where(array('resource_id' => $modx->resource->id));
+				$words = $highlighted_words = $mustdelete = array();
+				if ($c->prepare() && $c->stmt->execute()) {
+					while ($row = $c->stmt->fetch(PDO::FETCH_ASSOC)) {
+						if ($auto_delete) {
+							$exists = strpos($output, $row['text']);
+							if ($exists === FALSE) {
+								$mustdelete[] = $row['id'];
+								continue;
+							}
+						}
+						$words[] = $row['text'];
+						$highlighted_words[] = str_replace('{text}', $row['text'], $tpl);
+					}
+				}
+				//Удаляем слова, которых уже нет в контенте, предполагаем что исправлены.
+				if ($auto_delete && !empty($mustdelete)) {
+					$c = $modx->newQuery("OrphoMan");
+					$c->command('delete');
+					$c->where(array('id:IN' => $mustdelete));
+					$c->prepare();
+					if (!$c->stmt->execute()) {
+						$modx->log(modx::LOG_LEVEL_ERROR, 'Ошибка удаления исправленных слов из БД!');
+					}
+				}
+				// Выделяем слова с ошибками
+				if ($highlight && !empty($words)) {
+					$output = str_replace($words, $highlighted_words, $output);
+				}
+
 			}
 		}
 		break;

@@ -1,5 +1,10 @@
 Changelog for OrphoMan.
 
+1.0.0-pl
+==============
+- Fixed an error of displaying the confirm dialog in Firefox
+- Make some improvements
+
 1.0.0-rc2
 ==============
 - Fixed an error in description of settings

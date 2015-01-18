@@ -29,7 +29,8 @@
 }
 .modal-dialog {
 	margin: auto auto;
-	position: relative;
+	position: fixed;
+	left: 40%;
 	top:30%;
 	width: 450px;
 	z-index: 1050;

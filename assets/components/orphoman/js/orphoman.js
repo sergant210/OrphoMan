@@ -61,7 +61,6 @@
 		open : function() {
 			$('#orphoman_confirm_dlg').show();
 			$('.modal-backdrop').show();
-			$('input[name=comment]').focus();
 		},
 		close : function() {
 			$('#orphoman_confirm_dlg').hide();
