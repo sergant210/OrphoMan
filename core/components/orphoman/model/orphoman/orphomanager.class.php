@@ -56,11 +56,9 @@ class OrphoManager {
 					$max = $this->modx->getOption('max',$this->config,100);
 					$actionUrl=$this->config['actionUrl'];
 					$resource = $this->modx->resource->id;
-					$this->modx->regClientCSS($this->config['cssUrl'].'orphoman.css');
-					$this->modx->regClientCSS($this->config['cssUrl'].'jquery.jgrowl.css');
-					$config_js = "<script type=\"text/javascript\">\n var orphoConfig = {\n\tactionUrl:\"$actionUrl\",\n\tmin:$min,\n\tmax:$max,\n\tresource: $resource\n};\n</script>";
+					$this->modx->regClientCSS($this->config['cssUrl'].'orphoman.min.css');
+					$config_js = "<script type=\"text/javascript\">\n var orphoConfig = {\n\tactionUrl:\"{$actionUrl}\",\n\tmin:{$min},\n\tmax:{$max},\n\tresource:{$resource}\n};\n</script>";
 					$this->modx->regClientStartupScript($config_js, true);
-					$this->modx->regClientScript($this->config['jsUrl'].'jquery.jgrowl.min.js');
 					$this->modx->regClientScript($this->config['jsUrl'].'orphoman.js');
 					$tmpChunk = $this->modx->getObject('modChunk',array('name'=>'orphoman.confirm.dlg'));
 					$ConfirmDlg = $tmpChunk->getContent();

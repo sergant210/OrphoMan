@@ -16,7 +16,6 @@ $modx->setLogLevel(modX::LOG_LEVEL_ERROR);
 $modx->setLogTarget('FILE');
 $modx->error->message = null;
 
-//$modx->addPackage('orphoman',MODX_CORE_PATH.'components/orphoman/model/');
 /* @var OrphoManager $OrphoMan */
 $OrphoMan = $modx->getService('orphoman', 'OrphoManager', $modx->getOption('orphoman_core_path', null, $modx->getOption('core_path') . 'components/orphoman/') . 'model/orphoman/');
 if ($modx->error->hasError() || !($OrphoMan instanceof OrphoManager)) {
@@ -27,7 +26,6 @@ $response = array('success' => false, 'message' =>'');
 switch ($action) {
 	case 'save': 
 		if (!empty($_REQUEST['text'])) {
-			//$OrphoMan = $modx->newObject('OrphoMan');
 			$response = $OrphoMan->saveError($_REQUEST);
 		}
 		break;

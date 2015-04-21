@@ -15,7 +15,7 @@
 }
 .orphoman-message-info  {background-color: darkred !important;}
 /**************************************************************/
-.modal {
+#orphoman_confirm_dlg {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -27,7 +27,7 @@
 	-webkit-overflow-scrolling: touch;
 	outline: 0;
 }
-.modal-dialog {
+#orphoman_confirm_dlg .modal-dialog {
 	margin: auto auto;
 	position: fixed;
 	left: 40%;
@@ -35,7 +35,7 @@
 	width: 450px;
 	z-index: 1050;
 }
-.modal-content {
+#orphoman_confirm_dlg .modal-content {
 	position: relative;
 	background-color: #fff;
 	-webkit-background-clip: padding-box;
@@ -47,7 +47,7 @@
 	-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
 	box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
 }
-.modal-backdrop {
+#orphoman-modal-backdrop {
 	display: none;
 	position: fixed;
 	top: 0;
@@ -59,42 +59,42 @@
 	filter: alpha(opacity=50);
 	opacity: .5;
 }
-.modal-header {
+#orphoman_confirm_dlg .modal-header {
 	min-height: 15px;
 	padding: 10px 15px;
 	border-bottom: 1px solid #e5e5e5;
 	border-radius: 5px 5px 0 0;
 	background-color: #EEE;
 }
-.modal-header .close {
+#orphoman_confirm_dlg .modal-header .close {
 	margin-top: -2px;
 }
-.modal-title {
+#orphoman_confirm_dlg .modal-title {
 	margin: 0;
 	font-size: 16px;
 	font-family: Arial,Helvetica,sans-serif;
 	color: #555;
 	line-height: 1.5;
 }
-.modal-body {
+#orphoman_confirm_dlg .modal-body {
 	position: relative;
 	padding: 15px;
 }
-.modal-footer {
+#orphoman_confirm_dlg .modal-footer {
 	background-color: #EEE;
 	border-radius: 0 0 5px 5px;
 	padding: 10px 15px;
 	text-align: right;
 	border-top: 1px solid #e5e5e5;
 }
-.modal-footer .btn + .btn {
+#orphoman_confirm_dlg .modal-footer .btn + .btn {
 	margin-bottom: 0;
 	margin-left: 5px;
 }
-.modal-footer .btn-group .btn + .btn {
+#orphoman_confirm_dlg .modal-footer .btn-group .btn + .btn {
 	margin-left: -1px;
 }
-.modal-footer .btn-block + .btn-block {
+#orphoman_confirm_dlg .modal-footer .btn-block + .btn-block {
 	margin-left: 0;
 }
 .modal-scrollbar-measure {
@@ -104,12 +104,12 @@
 	height: 50px;
 	overflow: scroll;
 }
-.modal-footer:before,
-.modal-footer:after {
+#orphoman_confirm_dlg .modal-footer:before,
+#orphoman_confirm_dlg .modal-footer:after {
 	content: " ";
 	display: table;
 }
-.modal-footer:after {
+#orphoman_confirm_dlg .modal-footer:after {
 	clear: both;
 }
 .center-block {
@@ -118,7 +118,7 @@
 	margin-right: auto;
 }
 /***************************************************************************/
-.btn {
+#orphoman_confirm_dlg .btn {
 	display: inline-block;
 	margin-bottom: 0;
 	font-weight: normal;
@@ -139,31 +139,31 @@
 	-ms-user-select: none;
 	user-select: none;
 }
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus {
+#orphoman_confirm_dlg .btn:focus,
+#orphoman_confirm_dlg .btn:active:focus,
+#orphoman_confirm_dlg .btn.active:focus,
+#orphoman_confirm_dlg .btn.focus,
+#orphoman_confirm_dlg .btn:active.focus,
+#orphoman_confirm_dlg .btn.active.focus {
 	outline: thin dotted;
 	outline: 5px auto -webkit-focus-ring-color;
 	outline-offset: -2px;
 }
-.btn:hover,
-.btn:focus,
-.btn.focus {
+#orphoman_confirm_dlg .btn:hover,
+#orphoman_confirm_dlg .btn:focus,
+#orphoman_confirm_dlg .btn.focus {
 	color: #333333;
 	text-decoration: none;
 }
-.btn:active,
-.btn.active {
+#orphoman_confirm_dlg .btn:active,
+#orphoman_confirm_dlg .btn.active {
 	outline: 0;
 	background-image: none;
 	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-.btn.disabled,
-.btn[disabled],
+#orphoman_confirm_dlg .btn.disabled,
+#orphoman_confirm_dlg .btn[disabled],
 fieldset[disabled] .btn {
 	cursor: not-allowed;
 	pointer-events: none;
@@ -172,29 +172,29 @@ fieldset[disabled] .btn {
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
-.btn-default {
+#orphoman_confirm_dlg .btn-default {
 	color: #333333;
 	background-color: #ffffff;
 	border-color: #cccccc;
 }
-.btn-default:hover,
-.btn-default:focus,
-.btn-default.focus,
-.btn-default:active,
-.btn-default.active {
+#orphoman_confirm_dlg .btn-default:hover,
+#orphoman_confirm_dlg .btn-default:focus,
+#orphoman_confirm_dlg .btn-default.focus,
+#orphoman_confirm_dlg .btn-default:active,
+#orphoman_confirm_dlg .btn-default.active {
 	color: #333333;
 	background-color: #e6e6e6;
 	border-color: #adadad;
 }
 /***************************************************************************/
-.form-group {
+#orphoman_confirm_dlg .form-group {
 	margin-bottom: 10px;
 }
-.form-group.last {
+#orphoman_confirm_dlg .form-group.last {
 	margin-bottom: 0;
 }
 
-.form-control {
+#orphoman_confirm_dlg .form-control {
 	display: block;
 	width: 400px;
 	padding: 5px;
@@ -211,7 +211,7 @@ fieldset[disabled] .btn {
 	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
-.form-control:focus {
+#orphoman_confirm_dlg .form-control:focus {
 	border-color: #66afe9;
 	outline: 0;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);

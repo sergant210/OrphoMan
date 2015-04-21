@@ -4,7 +4,7 @@
 			<div class="modal-header">
 				<h4 class="modal-title">Отправить сообщение об ошибке?</h4>
 			</div>
-			<form id="omConfirmDlgForm" role="form" action="post">
+			<form id="omConfirmDlgForm" role="form" method="post">
 				<div class="modal-body">
 					<div class="form-group">Ошибка: <span id="error_text"></span></div>
 					<div class="form-group last">
@@ -20,4 +20,4 @@
 		</div>
 	</div>
 </div>
-<div class="modal-backdrop"></div>
+<div id="orphoman-modal-backdrop"></div>

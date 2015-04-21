@@ -1,20 +1,25 @@
 Changelog for OrphoMan.
 
+1.0.1-pl
+==============
+- Refactor css.
+- Move jGrowl registration into snippet. So it can be switched off if it's already registered.
+
 1.0.0-pl
 ==============
-- Fixed an error of displaying the confirm dialog in Firefox
-- Make some improvements
+- Fixed an error of displaying the confirm dialog in Firefox.
+- Make some improvements.
 
 1.0.0-rc2
 ==============
-- Fixed an error in description of settings
-- Fixed an error of saving comment
+- Fixed an error in description of settings.
+- Fixed an error of saving comment.
 
 1.0.0-rc1
 ==============
-- Add the setting "auto_delete"
-- Add link to resource in the list of mistakes
+- Add the setting "auto_delete".
+- Add link to resource in the list of mistakes.
 
 1.0.0-rc
 ==============
-- Initial release
+- Initial release.

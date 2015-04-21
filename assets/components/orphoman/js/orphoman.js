@@ -60,11 +60,11 @@
 	dialog = {
 		open : function() {
 			$('#orphoman_confirm_dlg').show();
-			$('.modal-backdrop').show();
+			$('#orphoman-modal-backdrop').show();
 		},
 		close : function() {
 			$('#orphoman_confirm_dlg').hide();
-			$('.modal-backdrop').hide();
+			$('#orphoman-modal-backdrop').hide();
 			$('input[name=comment]').val('');
 		}
 	};
