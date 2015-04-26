@@ -53,7 +53,7 @@ $xpdo_meta_map['OrphoMan']= array (
     'resource_url' => 
     array (
       'dbtype' => 'varchar',
-      'precision' => '40',
+      'precision' => '100',
       'phptype' => 'string',
       'null' => false,
     ),

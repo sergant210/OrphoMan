@@ -54,14 +54,16 @@ class OrphoManager {
 				if (!defined('MODX_API_MODE') || !MODX_API_MODE) {
 					$min = $this->modx->getOption('min',$this->config,5);
 					$max = $this->modx->getOption('max',$this->config,100);
+					$messageMin = $this->modx->lexicon('orphoman_message_min');
+					$messageMax = $this->modx->lexicon('orphoman_message_max');
 					$actionUrl=$this->config['actionUrl'];
 					$resource = $this->modx->resource->id;
 					$this->modx->regClientCSS($this->config['cssUrl'].'orphoman.min.css');
-					$config_js = "<script type=\"text/javascript\">\n var orphoConfig = {\n\tactionUrl:\"{$actionUrl}\",\n\tmin:{$min},\n\tmax:{$max},\n\tresource:{$resource}\n};\n</script>";
+					$config_js = "<script type=\"text/javascript\">\n var orphoConfig = {\n\tactionUrl:'{$actionUrl}',\n\tmin:{$min},\n\tmax:{$max},\n\tresource:{$resource},
+\tmessageMin:'{$messageMin}',\n\tmessageMax:'{$messageMax}'\n};\n</script>";
 					$this->modx->regClientStartupScript($config_js, true);
 					$this->modx->regClientScript($this->config['jsUrl'].'orphoman.js');
-					$tmpChunk = $this->modx->getObject('modChunk',array('name'=>'orphoman.confirm.dlg'));
-					$ConfirmDlg = $tmpChunk->getContent();
+					$ConfirmDlg = $this->modx->getChunk('orphoman.confirm.dlg');
 					$this->modx->regClientHTMLBlock($ConfirmDlg);
 				}
 				break;
@@ -110,10 +112,10 @@ class OrphoManager {
 		$mail = $this->modx->getService('mail', 'mail.modPHPMailer');
 		$mail->setHTML(true);
 		$pageUrl = $this->modx->makeUrl($data['resource'],'','','full');
-		$subject = $this->modx->getOption('orphoman.email_subject', null, 'На сайте обнаружена ошибка');
+		$subject = $this->modx->getOption('orphoman.email_subject', null, $this->modx->lexicon('orphoman_email_subject'));
 		$res=$this->modx->getObject('modResource',$data['resource']);
 		$pagetitle = $res->get('pagetitle');
-		$body = $this->modx->getOption('orphoman.email_body', null, 'На странице <a href="{id}">{pagetitle}</a> найдена ошибка - "{error}"<br>Комментарий: {comment}');
+		$body = $this->modx->getOption('orphoman.email_body', null, $this->modx->lexicon('orphoman_email_body'));
 		$body = str_replace(array('{id}','{pagetitle}','{error}','{comment}'),array($pageUrl,$pagetitle,$data['text'],$data['comment']),$body);
 
 		$mail->set(modMail::MAIL_SUBJECT, $subject);

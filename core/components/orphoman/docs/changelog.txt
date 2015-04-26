@@ -1,25 +1,43 @@
 Changelog for OrphoMan.
 
+1.0.2-pl
+==============
+- [en] Increase length of the "resource_url" field from 40 to 100.
+- [ru] Увеличена длина поля "resource_url" с 40 до 100.
+- [en] Add button "Find a mistake?" to inform the users.
+- [ru] Добавлена информационная кнопка "Нашли ошибку?".
+- [en] Add a shortcut <Enter> to the Send button.
+- [ru] Добавлена горячая клавиша <Enter> для кнопки "Отправить".
+
 1.0.1-pl
 ==============
-- Refactor css.
-- Move jGrowl registration into snippet. So it can be switched off if it's already registered.
+- [en] Refactor css for compatibility with bootstrap.
+- [ru] Переработан css код для совместимости с bootstrap.
+- [en] Move jGrowl registration into snippet. So it can be switched off if it's already registered.
+- [ru] Подключение библиотеки jGrowl вынесено в сниппет.
 
 1.0.0-pl
 ==============
-- Fixed an error of displaying the confirm dialog in Firefox.
-- Make some improvements.
+- [en] Fixed an error of displaying the confirm dialog in Firefox.
+- [ru] Исправлена ошибка отображения диалога в Firefox.
+- [en] Make some improvements.
+- [ru] Произведена оптимизация кода.
 
 1.0.0-rc2
 ==============
-- Fixed an error in description of settings.
-- Fixed an error of saving comment.
+- [en] Fixed an error in description of settings.
+- [ru] Исправлена ошибка в описании настроек.
+- [en] Fixed an error of saving comment.
+- [ru] Исправлена ошибка сохранения комментария.
 
 1.0.0-rc1
 ==============
-- Add the setting "auto_delete".
-- Add link to resource in the list of mistakes.
+- [en] Add the setting "auto_delete".
+- [ru] Добавлена системная настройка "auto_delete".
+- [en] Add link to resource in the list of mistakes.
+- [en] Добавлена ссылка на ресурс с ошибкой в списке ошибок.
 
 1.0.0-rc
 ==============
-- Initial release.
+- [en] Initial release.
+- [ru] Первый релиз.

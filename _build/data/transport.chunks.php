@@ -7,6 +7,10 @@ $tmp = array(
 		'file' => 'confirm.dlg',
 		'description' => '',
 	),
+	'orphoman.foundMistake.btn' => array(
+		'file' => 'foundMistake',
+		'description' => '',
+	),
 );
 
 // Save chunks for setup options

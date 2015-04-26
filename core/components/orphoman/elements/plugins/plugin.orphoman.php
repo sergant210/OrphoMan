@@ -7,7 +7,7 @@ switch ($modx->event->name) {
 			} else {
 				$auto_delete = (bool) $modx->getOption('orphoman.auto_delete',null,1);
 				$highlight = (bool) $modx->getOption('orphoman.highlight',null,1);
-				$tpl = $modx->getOption('orphoman.tpl',null,'<span style="background-color:red;">{text}</span>');
+				$tpl = $modx->getOption('orphoman.tpl',null,'<span class="error-text">{text}</span>');
 
 				$output = &$modx->resource->_output;
 				$c = $modx->newQuery("OrphoMan");

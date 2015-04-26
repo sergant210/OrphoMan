@@ -14,6 +14,11 @@ if ($object->xpdo) {
 			break;
 
 		case xPDOTransport::ACTION_UPGRADE:
+			$modelPath = $modx->getOption('orphoman_core_path', null, $modx->getOption('core_path') . 'components/orphoman/') . 'model/';
+			$modx->addPackage('orphoman', $modelPath);
+
+			$manager = $modx->getManager();
+			$manager->alterField('OrphoMan', 'resource_url');
 			break;
 
 		case xPDOTransport::ACTION_UNINSTALL:
