@@ -1,5 +1,5 @@
 ﻿--------------------
-OrphoMan
+OrphoMan - misspelling management
 --------------------
 
 ![orphoMan](https://file.modx.pro/files/4/5/6/456757754d258eedb62fb2ee94a91e3f.png)
