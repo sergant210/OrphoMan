@@ -1,12 +1,11 @@
 ﻿--------------------
 OrphoMan
 --------------------
-Author: Sergey Shlokov 
---------------------
 
 ![orphoMan](https://file.modx.pro/files/4/5/6/456757754d258eedb62fb2ee94a91e3f.png)
 
 [en]
+***
 OrphoManager for MODx Revolution. Clear your content from mistakes.
 
 ### How to use
@@ -25,6 +24,7 @@ In the backend you can manage found mistakes
 ![List of mistakes](https://file.modx.pro/files/2/2/1/221e45255328f3eb91d177ef0c264ec2.png)
 
 [ru]
+***
 Компонент для борьбы с орфографическими ошибками и опечатками на сайте.
 
 ### Как использовать
