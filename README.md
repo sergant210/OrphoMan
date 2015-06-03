@@ -11,6 +11,7 @@ OrphoManager for MODx Revolution. Clear your content from mistakes.
 ### How to use
 Put the snippet OrphoMan into the template or resources, where you want users can notify administrator about mistakes. To do this, you need to select the incorrect word(s) and press Ctrl+Enter.
 Do not forget to set the system option "mail_to" if you want to notify the administrator.
+If the user is authenticated in the 'mgr' context (logged in backend), he can see highlighted mistakes.
 
 ### System setting
 - orphoman.auto_delete - Automatic removal of the mistakes that not found on the specified page.
