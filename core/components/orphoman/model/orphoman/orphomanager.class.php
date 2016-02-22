@@ -24,17 +24,14 @@ class OrphoManager {
 
 		$this->config = array_merge(array(
 			'assetsUrl' => $assetsUrl,
-			'cssUrl' => $assetsUrl . 'css/',
-			'jsUrl' => $assetsUrl . 'js/',
-
+            'cssUrl' => $assetsUrl . 'css/',
+            'jsUrl' => $assetsUrl . 'js/',
 			'connectorUrl' => $connectorUrl,
 			'actionUrl' => $assetsUrl.'action.php',
-
 			'corePath' => $corePath,
 			'modelPath' => $corePath . 'model/',
 			'chunksPath' => $corePath . 'elements/chunks/',
 			'templatesPath' => $corePath . 'elements/templates/',
-			'chunkSuffix' => '.chunk.tpl',
 			'processorsPath' => $corePath . 'processors/'
 		), $config);
 		$this->modx->addPackage('orphoman', $this->config['modelPath']);
@@ -58,13 +55,27 @@ class OrphoManager {
 					$messageMax = $this->modx->lexicon('orphoman_message_max');
 					$actionUrl=$this->config['actionUrl'];
 					$resource = $this->modx->resource->id;
-					$this->modx->regClientCSS($this->config['cssUrl'].'orphoman.min.css');
+                    $style = $this->modx->getOption('orphoman.frontend_css',null,'');
+                    if ($style) $this->modx->regClientCSS($style);
+                    $js = $this->modx->getOption('orphoman.frontend_js',null,'');
+                    if ($js) $this->modx->regClientScript($js);
+
 					$config_js = "<script type=\"text/javascript\">\n var orphoConfig = {\n\tactionUrl:'{$actionUrl}',\n\tmin:{$min},\n\tmax:{$max},\n\tresource:{$resource},
 \tmessageMin:'{$messageMin}',\n\tmessageMax:'{$messageMax}'\n};\n</script>";
 					$this->modx->regClientStartupScript($config_js, true);
-					$this->modx->regClientScript($this->config['jsUrl'].'orphoman.js');
-					$ConfirmDlg = $this->modx->getChunk('orphoman.confirm.dlg');
-					$this->modx->regClientHTMLBlock($ConfirmDlg);
+					if ($confirmDlg = $this->modx->getChunk($this->config['tpl'])) {
+                        $this->modx->regClientHTMLBlock($confirmDlg);
+                    };
+                    //Показываем кнопку //Show the button "Found a mistake"
+                    if ($tpl = $this->modx->getChunk($this->config['tplButton'])){
+                        $this->modx->regClientHTMLBlock($tpl);
+                    };
+//$this->modx->log(1,print_r($this->config,1));
+                    // Подключаем jGrowl, если загрузке не отключена. //Register jGrowl if set true to load
+                    if ($this->config['loadjGrowl']) {
+                        $this->modx->regClientCSS($this->config['cssUrl'] . 'jquery.jgrowl.css');
+                        $this->modx->regClientScript($this->config['jsUrl'] . 'jquery.jgrowl.min.js');
+                    }
 				}
 				break;
 		}
@@ -92,10 +103,10 @@ class OrphoManager {
 			)
 		);
 		if (!$OrphoMan->save()) {
-			return $this->error('Не удалось сохранить данные.');
+			return $this->error($this->modx->lexicon('orphoman_err_save'));
 		}
 		$this->SendMail($data);
-		return $this->success();
+		return $this->success($this->modx->lexicon('orphoman_success_save'));
 	}
 
 	/** Send mail
@@ -112,10 +123,10 @@ class OrphoManager {
 		$mail = $this->modx->getService('mail', 'mail.modPHPMailer');
 		$mail->setHTML(true);
 		$pageUrl = $this->modx->makeUrl($data['resource'],'','','full');
-		$subject = $this->modx->getOption('orphoman.email_subject', null, $this->modx->lexicon('orphoman_email_subject'));
+		$subject = $this->modx->getOption('orphoman.email_subject', null, $this->modx->lexicon('orphoman_email_subject'),true);
 		$res=$this->modx->getObject('modResource',$data['resource']);
 		$pagetitle = $res->get('pagetitle');
-		$body = $this->modx->getOption('orphoman.email_body', null, $this->modx->lexicon('orphoman_email_body'));
+		$body = $this->modx->getOption('orphoman.email_body', null, $this->modx->lexicon('orphoman_email_body'),true);
 		$body = str_replace(array('{id}','{pagetitle}','{error}','{comment}'),array($pageUrl,$pagetitle,$data['text'],$data['comment']),$body);
 
 		$mail->set(modMail::MAIL_SUBJECT, $subject);

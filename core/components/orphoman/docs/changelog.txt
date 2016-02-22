@@ -1,4 +1,19 @@
-Changelog for OrphoMan.
+1.1.0-pl
+==============
+- [en] Added button "Notify about mistake" for touch screen devices which appears when text selecting is complete (#1).
+- [ru] Для устройств с сенсорным экраном добавлена кнопка "Уведомить об ошибке", которая появляется при выделении текста (#1).
+- [en] Added system setting "frontend_js" to specify js file to load (#2).
+- [ru] Добавлена системная настройка "frontend_js", в которой нужно указать файл скриптов для подключения (#2).
+- [en] Added system setting "frontend_css" to specify css file to load (#2).
+- [ru] Добавлена системная настройка "frontend_css", в которой нужно указать файл стилей для подключения (#2).
+- [en] Added snippet parameter "tpl" to specify the dialog template chunk.
+- [ru] В сниппет добавлен параметр "tpl", указывающий чанк с шаблоном диалога.
+- [en] Added snippet parameter "tplButton" to specify the button template chunk.
+- [ru] В сниппет добавлен параметр "tplButton", указывающий чанк с шаблоном кнопки "Нашли ошибку?".
+- [en] Added snippet parameter "loadjGrowl" to load jGrowl notification library.
+- [ru] В сниппет добавлен параметр "loadjGrowl" для загрузки библиотеки уведомлений jGrowl.
+- [en] Added notification about successful transmission of the message.
+- [ru] Добавлено уведомление об успешной отправке сообщения об ошибке.
 
 1.0.2-pl
 ==============

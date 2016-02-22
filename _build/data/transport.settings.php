@@ -10,7 +10,7 @@ $tmp = array(
 	),
 	'tpl' => array(
 		'xtype' => 'textfield',
-		'value' => '',
+		'value' => '<span class="error-text" title="{comment}">{text}</span>',
 		'area' => 'orphoman.main',
 	),
 	'mail_to' => array(
@@ -33,7 +33,16 @@ $tmp = array(
 		'value' => true,
 		'area' => 'orphoman.main',
 	),
-
+    'frontend_css' => array(
+        'xtype' => 'textfield',
+        'value' => '{assets_url}components/orphoman/css/orphoman.min.css',
+        'area'  => 'orphoman.main',
+    ),
+    'frontend_js' => array(
+        'xtype' => 'textfield',
+        'value' => '{assets_url}components/orphoman/js/orphoman.js',
+        'area'  => 'orphoman.main',
+    ),
 );
 
 foreach ($tmp as $k => $v) {

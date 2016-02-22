@@ -13,9 +13,11 @@ $_lang['orphoman_dialog_cancel'] = 'Отмена';
 $_lang['orphoman_message_min'] = 'Количество символов должно быть не менее ';
 $_lang['orphoman_message_max'] = 'Максимально допустимое количество символов ';
 $_lang['orphoman_found_mistake_btn'] = 'Нашли ошибку?';
-$_lang['orphoman_found_mistake_text'] = 'Спасибо за внимательность!<br>Выделите опечатку и нажмите <kbd>Ctrl</kbd> + <kbd>Enter</kbd>, чтобы отправить сообщение об ошибке.';
+$_lang['orphoman_found_mistake_text'] = 'Выделите опечатку и нажмите <kbd>Ctrl</kbd> + <kbd>Enter</kbd>, чтобы отправить сообщение об ошибке.';
 $_lang['orphoman_email_subject'] = 'На сайте обнаружена ошибка';
 $_lang['orphoman_email_body'] = 'На странице <a href="{id}">{pagetitle}</a> найдена ошибка - "{error}"<br>Комментарий: {comment}';
+$_lang['orphoman_inform_about_mistake'] = 'Сообщить об ошибке';
+$_lang['orphoman_grid_search'] = 'Поиск';
 
 $_lang['orphoman_items'] = 'Список ошибок';
 $_lang['orphoman_item_resource_id'] = 'Id ресурса';
@@ -24,7 +26,7 @@ $_lang['orphoman_item_text'] = 'Текст';
 $_lang['orphoman_item_comment'] = 'Комментарий';
 $_lang['orphoman_item_ip'] = 'ip отправителя';
 $_lang['orphoman_item_createdon'] = 'Дата';
-$_lang['orphoman_grid_actions'] = '';
+$_lang['orphoman_grid_actions'] = '<i class="icon icon-cog"></i>';
 
 $_lang['orphoman_item_remove'] = 'Удалить запись';
 $_lang['orphoman_items_remove'] = 'Удалить записи';
@@ -32,6 +34,6 @@ $_lang['orphoman_item_remove_confirm'] = 'Вы уверены, что хотит
 $_lang['orphoman_items_remove_confirm'] = 'Вы уверены, что хотите удалить эти записи?';
 $_lang['orphoman_item_active'] = 'Включено';
 
+$_lang['orphoman_success_save'] = 'Сообщение успешно отправлено.';
 $_lang['orphoman_item_err_remove'] = 'Ошибка удаления записи!';
-
-$_lang['orphoman_grid_search'] = 'Поиск';
+$_lang['orphoman_err_save'] = 'Не удалось сохранить данные!';

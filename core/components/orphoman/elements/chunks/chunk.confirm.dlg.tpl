@@ -20,3 +20,7 @@
 		</div>
 	</div>
 </div>
+<!-- Inform button -->
+<button id="inform-button" class="btn btn-primary">
+	[[%orphoman_inform_about_mistake]]
+</button>

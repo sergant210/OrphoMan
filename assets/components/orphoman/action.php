@@ -8,7 +8,13 @@ else {
 }
 
 define('MODX_API_MODE', true);
-require_once dirname(dirname(dirname(dirname(__FILE__)))).'/index.php';
+if (file_exists(dirname(dirname(dirname(dirname(__FILE__)))).'/index.php')) {
+    /** @noinspection PhpIncludeInspection */
+    require_once dirname(dirname(dirname(dirname(__FILE__)))).'/index.php';
+}
+else {
+    require_once dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/index.php';
+}
 
 $modx->getService('error','error.modError');
 $modx->getRequest();

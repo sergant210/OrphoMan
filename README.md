@@ -19,7 +19,9 @@ If the user is authenticated in the 'mgr' context (logged in backend), he can se
 - orphoman.email_subject - Email subject about a mistake. Optional.
 - orphoman.highlight - Enable of mistakes highlighting.
 - orphoman.mail_to - Admin email.
-- orphoman.tpl - Template to highlight mistakes.
+- orphoman.tpl - Template to highlight mistakes.  By default, &lt;span class="error-text" title="{comment}"&gt;{text}&lt;/span&gt;'.
+- orphoman.frontend_css - Path to the origin css file.
+- orphoman.frontend_js - Path to the origin js file. 
 
 In the backend you can manage found mistakes  
 ![List of mistakes](https://file.modx.pro/files/2/2/1/221e45255328f3eb91d177ef0c264ec2.png)
@@ -38,7 +40,9 @@ In the backend you can manage found mistakes
 - orphoman.email_subject - Заголовок письма об ошибке. Не обязательно.
 - orphoman.highlight - Включает выделение слов с ошибками в контенте.
 - orphoman.mail_to - Email администратора, которому будет отправлено уведомление об ошибке..
-- orphoman.tpl - Шаблон для выделения слов.
+- orphoman.tpl - Шаблон для выделения слов. По-умолчанию, &lt;span class="error-text" title="{comment}"&gt;{text}&lt;/span&gt;'.
+- orphoman.frontend_css - Путь к файлу стилей. Чтобы отключить загрузку, нужно указать пустое значение.
+- orphoman.frontend_js - Путь к файлу скриптов. Чтобы отключить загрузку, нужно указать пустое значение. 
 
 Список всех ошибок можно посмотреть в админке. Посмотреть и, если нужно, удалить.
 Подробную информацию можно получить [тут](https://modstore.pro/packages/content/orphoman). 

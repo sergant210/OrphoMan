@@ -2,8 +2,9 @@
 	display: none;
 }
 .error-text{
-	background-color: red;
+	background-color: rgb(229, 0, 10);
 	color: white;
+	border-bottom: 1px dotted;
 }
 #error-text{
 	color: red;
@@ -34,6 +35,36 @@
 	top:30%;
 	width: 450px;
 	z-index: 1050;
+}
+@media (min-width: 768px) {
+	#orphoman-confirm-dlg .modal-dialog {
+		margin: auto auto;
+		position: fixed;
+		left: 10px;
+		top:10%;
+		width: 400px;
+		z-index: 1050;
+	}
+}
+@media (min-width: 992px) {
+	#orphoman-confirm-dlg .modal-dialog {
+		margin: auto auto;
+		position: fixed;
+		left: 10px;
+		top:10%;
+		width: 400px;
+		z-index: 1050;
+	}
+}
+@media (min-width: 1200px) {
+	#orphoman-confirm-dlg .modal-dialog {
+		margin: auto auto;
+		position: fixed;
+		left: 10px;
+		top:10%;
+		width: 400px;
+		z-index: 1050;
+	}
 }
 #orphoman-confirm-dlg .modal-content {
 	position: relative;
@@ -195,7 +226,7 @@ fieldset[disabled] .btn {
 
 #orphoman-confirm-dlg .form-control {
 	display: block;
-	width: 400px;
+	width: 100%;
 	padding: 5px;
 	font-size: 14px;
 	line-height: 1.5;
@@ -250,4 +281,14 @@ fieldset[disabled] .btn {
 	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 	font-size: 90%;
 	padding: 2px 4px;
+}
+#inform-button {
+	display: none;
+	bottom: auto;
+	left: auto;
+	position: fixed;
+	right: auto;
+	top: auto;
+	font-size: 12px;
+	padding: 4px;
 }

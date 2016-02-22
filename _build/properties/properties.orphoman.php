@@ -11,6 +11,18 @@ $tmp = array(
 		'type' => 'numberfield',
 		'value' => 100,
 	),
+    'tpl' => array(
+        'type' => 'textfield',
+        'value' => 'orphoman.confirm.dlg',
+    ),
+    'tplButton' => array(
+        'type' => 'textfield',
+        'value' => 'orphoman.foundMistake.btn',
+    ),
+    'loadjGrowl' => array(
+        'xtype' => 'combo-boolean',
+        'value' => true,
+    ),
 );
 
 foreach ($tmp as $k => $v) {
