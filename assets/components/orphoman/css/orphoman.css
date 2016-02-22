@@ -249,11 +249,17 @@ fieldset[disabled] .btn {
 }
 /***************************************************************************/
 #orphography-button {
+	display: none;
 	bottom: 7px;
 	left: auto;
 	position: fixed;
 	right: 7px;
 	top: auto;
+}
+@media screen and (min-width: 992px) {
+	#orphography-button {
+		display: block;
+	}
 }
 #orphography-block {
 	bottom: 45px;
