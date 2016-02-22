@@ -65,7 +65,7 @@
 				return false;
 			}
 			if (touchEvent) {
-				$('#inform-button').show().css({"top": e.clientY - 5, "left": e.clientX + 5});
+				$('#inform-button').show().css({"top": e.clientY - 15, "left": e.clientX + 20});
 			} else {
 				Selection.confirm(Selection.text);
 			}
