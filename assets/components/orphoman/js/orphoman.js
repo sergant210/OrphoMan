@@ -45,7 +45,7 @@
 						Selection.run(e, false);
 					} else if (e.keyCode == 13) {
 						if ($('#orphoman-confirm-dlg').is(':visible')) {
-							$('#omConfirmDlgForm').trigger('submit');
+							$('#confirm-btn').trigger('click');
 						}
 
 					} else if (e.keyCode == 27) {

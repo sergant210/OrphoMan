@@ -1,3 +1,10 @@
+1.1.1-pl
+==============
+- [en] Fixed bug with double notification when press Enter after add a comment.
+- [ru] Исправлена ошибка с двойным уведомлением при нажатии кнопки Enter после добавления комментария.
+- [en] Update style for jGrowl notifications.
+- [ru] Обновлен стиль уведомлений для jGrowl.
+
 1.1.0-pl
 ==============
 - [en] Added button "Notify about mistake" for touch screen devices which appears when text selecting is complete (#1).

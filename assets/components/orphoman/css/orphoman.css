@@ -14,7 +14,8 @@
 	font-weight: normal;
 	margin-bottom: 5px;
 }
-.orphoman-message-info  {background-color: darkred !important;}
+.orphoman-message-info  {background-color: green !important;}
+.orphoman-message-error  {background-color: brown !important;}
 /**************************************************************/
 #orphoman-confirm-dlg {
 	position: fixed;
