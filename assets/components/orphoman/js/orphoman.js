@@ -1,29 +1,21 @@
 ﻿var Selection = {
 		text: '',
+		dialogOpened: false,
+
 		initialize: function() {
 			$(document)
-				.on('mousedown touchend', function(e) {
-					if ($('#inform-button').is(':visible')) {
-						Selection.text = '';
-						$('#inform-button').hide();
-					}
-				})
 				.on('click touchend', '#cancel-btn', function(e) {
 					dialog.close();
-					e.preventDefault();
 				})
 				.on('click touchend', '#orphography-button', function(e) {
 					$('#orphography-block').fadeToggle(300);
-					e.preventDefault();
 				})
 				.on('mousedown touchend', '#inform-button', function(e) {
 					$(this).hide();
-					// получаем и показываем выделенный текст
+					Selection.clear();
 					Selection.confirm(Selection.text);
-					e.preventDefault();
 				})
 				.on('submit', '#omConfirmDlgForm', function(e) {
-					e.preventDefault();
 					var comment=$('input[name=comment]').val();
 					dialog.close();
 					$.post(orphoConfig.actionUrl, {action: 'save', text: $('#error-text').text(), comment: comment,resource: orphoConfig.resource}, function(response) {
@@ -31,34 +23,35 @@
 							Selection.message(response.message);
 						}
 					},'json');
+					e.preventDefault();
 				})
 				// touch screen
 				.on('touchend', function(e) {
-					var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-					Selection.run(touch,true);
-					e.preventDefault();
+					if ($('#inform-button').is(':visible') && e.target.id != 'inform-button') {
+						Selection.clear();
+						Selection.text = '';
+						$('#inform-button').hide();
+					} else {
+						var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+						Selection.run(touch, true);
+						if (Selection.dialogOpened && e.target.id != 'confirm-btn' && e.target.id != 'comment') e.preventDefault();
+					}
 				})
 				// press Ctrl + Enter
 				.on('keydown', function(e) {
 					if (e.keyCode == 13 && e.ctrlKey){
 						$('#inform-button').hide();
 						Selection.run(e, false);
-					} else if (e.keyCode == 13) {
-						if ($('#orphoman-confirm-dlg').is(':visible')) {
-							$('#confirm-btn').trigger('click');
-						}
-
 					} else if (e.keyCode == 27) {
 						if ($('#orphoman-confirm-dlg').is(':visible')) {
 							dialog.close();
 						}
-
 					}
 				});
 		},
 		run : function(e,touchEvent) {
 			Selection.text = Selection.getText();
-			if ($('#orphoman-confirm-dlg').is(':visible') || !Selection.text) return false;
+			if (!Selection.text) return false;
 			var message = Selection.validate(Selection.text);
 			if (message) {
 				Selection.message(message);
@@ -69,6 +62,7 @@
 			} else {
 				Selection.confirm(Selection.text);
 			}
+			Selection.dialogOpened = true;
 		},
 		getText : function() {
 			var selected_text;
@@ -114,6 +108,7 @@
 			$('#orphoman-modal-backdrop').remove();
 			$('input[name=comment]').val('');
 			Selection.clear();
+			Selection.dialogOpened = false;
 		}
 	};
 
