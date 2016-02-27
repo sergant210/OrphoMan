@@ -1,3 +1,8 @@
+1.1.2-pl
+==============
+- [en] Javascript optimization for mobile devices.
+- [ru] Оптимизирован javascript для мобильных устройств.
+
 1.1.1-pl
 ==============
 - [en] Fixed bug with double notification when press Enter after add a comment.

@@ -14,8 +14,18 @@
 	font-weight: normal;
 	margin-bottom: 5px;
 }
-.orphoman-message-info  {background-color: green !important;}
-.orphoman-message-error  {background-color: brown !important;}
+.orphoman-message-info  {
+	background-color: green !important;
+	background-image: none;
+	border: medium none;
+	color: inherit;
+}
+.orphoman-message-error  {
+	background-color: brown !important;
+	background-image: none;
+	border: medium none;
+	color: inherit;
+}
 /**************************************************************/
 #orphoman-confirm-dlg {
 	position: fixed;
