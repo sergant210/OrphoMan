@@ -1,10 +1,10 @@
 <?php
 
-if (empty($_REQUEST['action'])) {
+if (empty($_POST['action'])) {
 	die('Access denied');
 }
 else {
-	$action = $_REQUEST['action'];
+	$action = $_POST['action'];
 }
 
 define('MODX_API_MODE', true);
@@ -31,8 +31,8 @@ if ($modx->error->hasError() || !($OrphoMan instanceof OrphoManager)) {
 $response = array('success' => false, 'message' =>'');
 switch ($action) {
 	case 'save': 
-		if (!empty($_REQUEST['text'])) {
-			$response = $OrphoMan->saveError($_REQUEST);
+		if (!empty($_POST['text'])) {
+			$response = $OrphoMan->saveError($_POST);
 		}
 		break;
 	default:

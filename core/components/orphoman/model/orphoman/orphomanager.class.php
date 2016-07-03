@@ -70,8 +70,7 @@ class OrphoManager {
                     if ($tpl = $this->modx->getChunk($this->config['tplButton'])){
                         $this->modx->regClientHTMLBlock($tpl);
                     };
-//$this->modx->log(1,print_r($this->config,1));
-                    // Подключаем jGrowl, если загрузке не отключена. //Register jGrowl if set true to load
+                    // Подключаем jGrowl, если загрузка не отключена. //Register jGrowl if set true to load
                     if ($this->config['loadjGrowl']) {
                         $this->modx->regClientCSS($this->config['cssUrl'] . 'jquery.jgrowl.css');
                         $this->modx->regClientScript($this->config['jsUrl'] . 'jquery.jgrowl.min.js');

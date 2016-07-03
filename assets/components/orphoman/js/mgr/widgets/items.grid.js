@@ -13,6 +13,10 @@ OrphoMan.grid.Items = function (config) {
 			action: 'mgr/item/getlist'
 		},
 		listeners: {
+			rowDblClick: function (grid, rowIndex, e) {
+				var row = grid.store.getAt(rowIndex);
+				this.showInfo(grid, e, row);
+			}
 		},
 		viewConfig: {
 			forceFit: true,
@@ -50,24 +54,43 @@ Ext.extend(OrphoMan.grid.Items, MODx.grid.Grid, {
 
 		this.addContextMenuItem(menu);
 	},
+	showInfo: function (btn, e, row) {
+		if (typeof(row) != 'undefined') {
+			this.menu.record = row.data;
+		}
+		else if (!this.menu.record) {
+			return false;
+		}
+		var id = this.menu.record.id;
 
-	createItem: function (btn, e) {
-		var w = MODx.load({
-			xtype: 'orphoman-item-window-create',
-			id: Ext.id(),
+		MODx.Ajax.request({
+			url: this.config.url,
+			params: {
+				action: 'mgr/item/get',
+				id: id
+			},
 			listeners: {
 				success: {
-					fn: function () {
-						this.refresh();
+					fn: function (r) {
+						if (this.infoWindow) this.infoWindow.destroy();
+						this.infoWindow = MODx.load({
+							xtype: 'orphoman-info-window',
+							listeners: {
+								/*success: {
+								 fn: function () {
+								 this.refresh();
+								 }, scope: this
+								 }*/
+							}
+						});
+						this.infoWindow.reset();
+						this.infoWindow.setValues(r.object);
+						this.infoWindow.show(Ext.EventObject.target);
 					}, scope: this
 				}
 			}
 		});
-		w.reset();
-		w.setValues({active: true});
-		w.show(e.target);
 	},
-
 	removeItem: function (act, btn, e) {
 		var ids = this._getSelectedIds();
 		if (!ids.length) {
@@ -97,7 +120,7 @@ Ext.extend(OrphoMan.grid.Items, MODx.grid.Grid, {
 	},
 
 	getFields: function (config) {
-		return ['id', 'resource_id', 'resource_url','text', 'ip', 'createdon', 'comment','actions'];
+		return ['id', 'resource_id', 'resource_url', 'text', 'ip', 'createdon', 'comment', 'actions', 'pagetitle'];
 	},
 
 	getColumns: function (config) {
@@ -105,7 +128,7 @@ Ext.extend(OrphoMan.grid.Items, MODx.grid.Grid, {
 			header: _('orphoman_item_resource_url'),
 			dataIndex: 'resource_id',
 			sortable: true,
-			width: 50,
+			width: 100,
 			renderer: this.renderResourceLink
 		}, {
 			header: _('orphoman_item_text'),
@@ -122,25 +145,25 @@ Ext.extend(OrphoMan.grid.Items, MODx.grid.Grid, {
 			header: _('orphoman_item_ip'),
 			dataIndex: 'ip',
 			sortable: false,
-			width: 100
+			width: 70
 		}, {
 
 			header: _('orphoman_item_createdon'),
 			dataIndex: 'createdon',
 			sortable: true,
-			width: 100
+			width: 80
 		}, {
 			header: _('orphoman_grid_actions'),
 			dataIndex: 'actions',
 			renderer: OrphoMan.utils.renderActions,
 			sortable: false,
-			width: 20,
+			width: 40,
 			id: 'actions'
 		}];
 	},
 	renderResourceLink: function(val,cell,row) {
 		if (row.data.resource_url) {
-			return '<a href="' + row.data.resource_url+ '" class="resource-link">' + val + '</a>'
+			return '<a href="' + row.data.resource_url+ '" class="resource-link">' + row.data.pagetitle + '</a>'
 		}
 		else {
 			return row.data.resource_id;

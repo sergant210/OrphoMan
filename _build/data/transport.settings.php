@@ -20,7 +20,7 @@ $tmp = array(
 	),
 	'email_subject' => array(
 		'xtype' => 'textfield',
-		'value' => 'На сайте обнаружена орфографическая ошибка',
+		'value' => '',
 		'area' => 'orphoman.main',
 	),
 	'email_body' => array(

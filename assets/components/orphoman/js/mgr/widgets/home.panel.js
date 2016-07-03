@@ -23,14 +23,34 @@ OrphoMan.panel.Home = function (config) {
 				title: _('orphoman_items'),
 				layout: 'anchor',
 				items: [{
-					html: _('orphoman_intro_msg'),
-					cls: 'panel-desc'
+					html: _('orphoman_update_available'),
+					cls: 'panel-desc',
+					id: 'orphoman-update-available',
+					style: {margin: '10px 15px 0',color:'red'},
+					hidden: true
 				}, {
 					xtype: 'orphoman-grid-items',
 					cls: 'main-wrapper'
 				}]
 			}]
-		}]
+		}],
+		listeners: {
+			render: function (p) {
+				MODx.Ajax.request({
+					url: OrphoMan.config.connector_url,
+					params: {
+						action: 'mgr/package/checkupdate'
+					},
+					listeners: {
+						success: {
+							fn: function (r) {
+								Ext.getCmp('orphoman-update-available').show();
+							}, scope: this
+						}
+					}
+				});
+			}
+		}
 	});
 	OrphoMan.panel.Home.superclass.constructor.call(this, config);
 };

@@ -7,7 +7,7 @@ class OrphoManRemoveProcessor extends modObjectProcessor {
 	public $objectType = 'OrphoMan';
 	public $classKey = 'OrphoMan';
 	public $languageTopics = array('orphoman');
-	//public $permission = 'remove';
+//	public $permission = 'remove_mistake';
 
 
 	/**

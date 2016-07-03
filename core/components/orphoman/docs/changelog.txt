@@ -1,3 +1,10 @@
+1.2.0-pl
+==============
+- [en] Added a dialog for the mistakes table.
+- [ru] Добавлен диалог для просмотра ошибок.
+- [en] Some improvements.
+- [ru] Небольшие доработки.
+
 1.1.2-pl
 ==============
 - [en] Javascript optimization for mobile devices.

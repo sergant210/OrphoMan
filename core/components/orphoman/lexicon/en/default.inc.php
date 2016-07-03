@@ -21,12 +21,14 @@ $_lang['orphoman_grid_search'] = 'Search';
 
 $_lang['orphoman_items'] = 'Spelling mistakes list';
 $_lang['orphoman_item_resource_id'] = 'Resource id';
-$_lang['orphoman_item_resource_url'] = 'Resource';
+$_lang['orphoman_item_resource'] = 'Resource';
 $_lang['orphoman_item_text'] = 'Text of mistake';
 $_lang['orphoman_item_comment'] = 'Comment';
 $_lang['orphoman_item_ip'] = 'Sender ip';
 $_lang['orphoman_item_createdon'] = 'Date';
 $_lang['orphoman_grid_actions'] = '<i class="icon icon-cog"></i>';
+$_lang['orphoman_info'] = 'Information';
+$_lang['orphoman_close'] = 'Close';
 
 $_lang['orphoman_item_remove'] = 'Remove row';
 $_lang['orphoman_items_remove'] = 'Remove rows';

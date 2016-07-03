@@ -28,11 +28,9 @@ class OrphoManHomeManagerController extends OrphoManMainController {
 	 * @return void
 	 */
 	public function loadCustomCssJs() {
-		//$this->addCss($this->OrphoMan->config['cssUrl'] . 'mgr/main.css');
-		//$this->addCss($this->OrphoMan->config['cssUrl'] . 'mgr/bootstrap.buttons.min.css');
 		$this->addJavascript($this->OrphoMan->config['jsUrl'] . 'mgr/misc/utils.js');
 		$this->addJavascript($this->OrphoMan->config['jsUrl'] . 'mgr/widgets/items.grid.js');
-		//$this->addJavascript($this->OrphoMan->config['jsUrl'] . 'mgr/widgets/items.windows.js');
+		$this->addJavascript($this->OrphoMan->config['jsUrl'] . 'mgr/widgets/items.windows.js');
 		$this->addJavascript($this->OrphoMan->config['jsUrl'] . 'mgr/widgets/home.panel.js');
 		$this->addJavascript($this->OrphoMan->config['jsUrl'] . 'mgr/sections/home.js');
 		$this->addHtml('<script type="text/javascript">
