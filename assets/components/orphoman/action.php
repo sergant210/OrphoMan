@@ -36,7 +36,7 @@ switch ($action) {
 		}
 		break;
 	default:
-		$response = $modx->toJSON(array('success' => false, 'message' => 'Неопределенное действие!'));
+		$response = $modx->toJSON(array('success' => false, 'message' => 'Request error!'));
 }
 
 if (is_array($response)) {

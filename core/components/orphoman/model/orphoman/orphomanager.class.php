@@ -70,7 +70,7 @@ class OrphoManager {
                     if ($tpl = $this->modx->getChunk($this->config['tplButton'])){
                         $this->modx->regClientHTMLBlock($tpl);
                     };
-                    // Подключаем jGrowl, если загрузка не отключена. //Register jGrowl if set true to load
+                    // Подключаем jGrowl, если загрузка не отключена. //Register jGrowl if set to true
                     if ($this->config['loadjGrowl']) {
                         $this->modx->regClientCSS($this->config['cssUrl'] . 'jquery.jgrowl.css');
                         $this->modx->regClientScript($this->config['jsUrl'] . 'jquery.jgrowl.min.js');
@@ -86,19 +86,20 @@ class OrphoManager {
 	 * @return array
 	 */
 	public function saveError ($data = array()) {
-		$data['text'] = $this->modx->sanitizeString(trim($data['text']));
-		$data['comment'] = $this->modx->sanitizeString(trim($data['comment']));
-		$data['resource'] = intval($data['resource']);
-		$resource_url = MODX_MANAGER_URL . 'index.php?a=resource/update&id=' . $data['resource'];
+	    $text = strip_tags(trim($data['text']));
+        $text = htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+        $comment = strip_tags(trim($data['comment']));
+        $comment = htmlspecialchars($comment, ENT_QUOTES, 'UTF-8');
+		$resource_url = MODX_MANAGER_URL . 'index.php?a=resource/update&id=' . intval($data['resource']);
 		$OrphoMan = $this->modx->newObject('OrphoMan');
 		$OrphoMan->fromArray(
 			array(
-				'resource_id'=>$data['resource'],
-				'text'=>$data['text'],
-				'comment'=>$data['comment'],
-				'ip'=>$_SERVER['REMOTE_ADDR'],
-				'createdon'=>date('d.m.Y H:i:s'),
-				'resource_url'=>$resource_url
+				'resource_id' => intval($data['resource']),
+				'text' => $text,
+				'comment' => $comment,
+				'ip' => $_SERVER['REMOTE_ADDR'],
+				'createdon' => date('d.m.Y H:i:s'),
+				'resource_url' => $resource_url
 			)
 		);
 		if (!$OrphoMan->save()) {

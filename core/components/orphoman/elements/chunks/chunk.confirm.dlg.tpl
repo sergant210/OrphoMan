@@ -13,7 +13,7 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="submit" class="btn btn-default" id="confirm-btn" form="omConfirmDlgForm" title="Enter">[[%orphoman_dialog_send]]</button>
+					<button type="submit" class="btn btn-primary" id="confirm-btn" form="omConfirmDlgForm" title="Enter">[[%orphoman_dialog_send]]</button>
 					<button type="button" class="btn btn-default" id="cancel-btn" title="Esc">[[%orphoman_dialog_cancel]]</button>
 				</div>
 			</form>

@@ -6,6 +6,7 @@ OrphoMan.window.Info = function (config) {
 	Ext.applyIf(config, {
 		title: _('orphoman_info'),
 		width: 400,
+		stateful: false,
 		// autoHeight: true,
 		// url: OrphoMan.config.connector_url,
 		fields: this.getFields(config),

@@ -1,3 +1,8 @@
+1.2.1-pl
+==============
+- [ru] Изменён метод фильтрования сообщений.
+- [en] Changed the sanitizing method for user message.
+
 1.2.0-pl
 ==============
 - [en] Added a dialog for the mistakes table.

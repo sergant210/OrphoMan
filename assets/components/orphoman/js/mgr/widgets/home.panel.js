@@ -13,7 +13,7 @@ OrphoMan.panel.Home = function (config) {
 		items: [{
 			html: '<h2>' + _('orphoman_desc') + '</h2>',
 			cls: '',
-			style: {margin: '15px 0'}
+			style: {margin: '15px 5px'}
 		}, {
 			xtype: 'modx-tabs',
 			defaults: {border: false, autoHeight: true},

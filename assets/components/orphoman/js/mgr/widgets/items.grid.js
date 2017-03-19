@@ -125,7 +125,7 @@ Ext.extend(OrphoMan.grid.Items, MODx.grid.Grid, {
 
 	getColumns: function (config) {
 		return [{
-			header: _('orphoman_item_resource_url'),
+			header: _('orphoman_item_resource'),
 			dataIndex: 'resource_id',
 			sortable: true,
 			width: 100,

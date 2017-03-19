@@ -14,6 +14,7 @@ class OrphoManGetProcessor extends modObjectGetProcessor {
      */
     public function cleanup() {
         $output =  $this->object->toArray();
+        $output['comment'] = htmlspecialchars_decode($output['comment'], ENT_QUOTES);
         $output['pagetitle'] = html_entity_decode($this->object->Resource->pagetitle);
         return $this->success('',$output);
     }
