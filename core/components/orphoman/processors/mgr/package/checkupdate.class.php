@@ -25,7 +25,9 @@ class orphoManCheckUpdateProcessor extends modProcessor {
         $c->limit(1);
         $signature = $this->modx->getValue($c->prepare());
 
-        if (empty($signature)) return $this->failure();
+        if (empty($signature)) {
+            return $this->failure();
+        }
 
         $response = $this->modx->runProcessor('workspace/packages/update-remote', array('signature'=>$signature));
         if ($response->isError()) {

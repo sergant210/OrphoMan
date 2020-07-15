@@ -30,12 +30,14 @@ $_lang['orphoman_grid_actions'] = '<i class="icon icon-cog"></i>';
 $_lang['orphoman_info'] = 'Information';
 $_lang['orphoman_close'] = 'Close';
 
-$_lang['orphoman_item_remove'] = 'Remove row';
-$_lang['orphoman_items_remove'] = 'Remove rows';
-$_lang['orphoman_item_remove_confirm'] = 'Are you sure you want to delete the row?';
-$_lang['orphoman_items_remove_confirm'] = 'Are you sure you want to delete the rows?';
+$_lang['orphoman_item_edit'] = 'Edit item';
+$_lang['orphoman_item_remove'] = 'Remove item';
+$_lang['orphoman_items_remove'] = 'Remove items';
+$_lang['orphoman_item_remove_confirm'] = 'Are you sure you want to delete the item?';
+$_lang['orphoman_items_remove_confirm'] = 'Are you sure you want to delete the items?';
 $_lang['orphoman_item_active'] = 'Active';
 
 $_lang['orphoman_success_save'] = 'Your message is sent.';
-$_lang['orphoman_item_err_remove'] = 'An error occurred while trying to remove the row.';
+$_lang['orphoman_item_err_remove'] = 'An error occurred while trying to remove the item.';
 $_lang['orphoman_err_save'] = 'An error occurred while trying to save the data!';
+$_lang['orphoman_err_empty_string'] = 'There is no text.';

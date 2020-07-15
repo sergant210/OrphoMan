@@ -4,6 +4,10 @@ $xpdo_meta_map['OrphoMan']= array (
   'version' => '1.1',
   'table' => 'orphoman',
   'extends' => 'xPDOSimpleObject',
+  'tableMeta' => 
+  array (
+    'engine' => 'MyISAM',
+  ),
   'fields' => 
   array (
     'resource_id' => NULL,

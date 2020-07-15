@@ -57,8 +57,7 @@ class OrphoManGetListProcessor extends modObjectGetListProcessor {
         $array['actions'][] = array(
             'cls' => '',
             'icon' => 'icon icon-edit',
-            'title' => $this->modx->lexicon('modextra_item_show'),
-            //'multiple' => $this->modx->lexicon('modextra_items_update'),
+            'title' => $this->modx->lexicon('orphoman_item_edit'),
             'action' => 'showInfo',
             'button' => true,
             'menu' => true,

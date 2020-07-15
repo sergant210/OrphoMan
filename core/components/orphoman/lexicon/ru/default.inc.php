@@ -30,6 +30,7 @@ $_lang['orphoman_grid_actions'] = '<i class="icon icon-cog"></i>';
 $_lang['orphoman_info'] = 'Информация об ошибке';
 $_lang['orphoman_close'] = 'Закрыть';
 
+$_lang['orphoman_item_edit'] = 'Изменить запись';
 $_lang['orphoman_item_remove'] = 'Удалить запись';
 $_lang['orphoman_items_remove'] = 'Удалить записи';
 $_lang['orphoman_item_remove_confirm'] = 'Вы уверены, что хотите удалить эту запись?';
@@ -39,3 +40,4 @@ $_lang['orphoman_item_active'] = 'Включено';
 $_lang['orphoman_success_save'] = 'Сообщение успешно отправлено.';
 $_lang['orphoman_item_err_remove'] = 'Ошибка удаления записи!';
 $_lang['orphoman_err_save'] = 'Не удалось сохранить данные!';
+$_lang['orphoman_err_empty_string'] = 'Отсутствует текст.';

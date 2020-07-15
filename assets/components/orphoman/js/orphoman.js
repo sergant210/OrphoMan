@@ -18,9 +18,13 @@
 				.on('submit', '#omConfirmDlgForm', function(e) {
 					var comment=$('input[name=comment]').val();
 					dialog.close();
-					$.post(orphoConfig.actionUrl, {action: 'save', text: $('#error-text').text(), comment: comment,resource: orphoConfig.resource}, function(response) {
+					$.post(orphoConfig.actionUrl, {action: 'save', text: $('#error-text').text(), comment: comment, resource: orphoConfig.resource}, function(response) {
 						if (response.message) {
-							Selection.message(response.message);
+							if (response.success) {
+								Selection.message(response.message);
+							} else {
+								Selection.error(response.message);
+							}
 						}
 					},'json');
 					e.preventDefault();
@@ -66,10 +70,11 @@
 		},
 		getText : function() {
 			var selected_text;
-			if (selected_text = window.getSelection)
+			if (typeof window.getSelection === "function") {
 				selected_text = window.getSelection().toString();
-			else
+			} else {
 				selected_text = document.selection.createRange().text;
+			}
 			return selected_text ? $.trim(selected_text) : '';
 		},
 		clear : function() {
@@ -86,6 +91,9 @@
 		},
 		message : function (message) {
 			$.jGrowl(message, {theme: 'orphoman-message-info'});
+		},
+		error : function (message) {
+			$.jGrowl(message, {theme: 'orphoman-message-error'});
 		},
 		validate : function (text) {
 			var message = '';

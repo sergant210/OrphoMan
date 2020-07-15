@@ -1,13 +1,20 @@
+1.3.0-pl
+==============
+- [en] Optimized for MODX 2.7.
+- [en] Some optimizations.
+- [ru] Адаптировано для 2.7.0.
+- [ru] Небольшие доработки.
+
 1.2.1-pl
 ==============
-- [ru] Изменён метод фильтрования сообщений.
-- [en] Changed the sanitizing method for user message.
+- [en] Changed the sanitizing method for user`s message to enable punctuation marks.
+- [ru] Изменён метод фильтрования сообщений для сохранения знаков препинания.
 
 1.2.0-pl
 ==============
 - [en] Added a dialog for the mistakes table.
-- [ru] Добавлен диалог для просмотра ошибок.
 - [en] Some improvements.
+- [ru] Добавлен диалог для просмотра ошибок.
 - [ru] Небольшие доработки.
 
 1.1.2-pl
@@ -18,62 +25,62 @@
 1.1.1-pl
 ==============
 - [en] Fixed bug with double notification when press Enter after add a comment.
-- [ru] Исправлена ошибка с двойным уведомлением при нажатии кнопки Enter после добавления комментария.
 - [en] Update style for jGrowl notifications.
+- [ru] Исправлена ошибка с двойным уведомлением при нажатии кнопки Enter после добавления комментария.
 - [ru] Обновлен стиль уведомлений для jGrowl.
 
 1.1.0-pl
 ==============
 - [en] Added button "Notify about mistake" for touch screen devices which appears when text selecting is complete (#1).
-- [ru] Для устройств с сенсорным экраном добавлена кнопка "Уведомить об ошибке", которая появляется при выделении текста (#1).
 - [en] Added system setting "frontend_js" to specify js file to load (#2).
-- [ru] Добавлена системная настройка "frontend_js", в которой нужно указать файл скриптов для подключения (#2).
 - [en] Added system setting "frontend_css" to specify css file to load (#2).
-- [ru] Добавлена системная настройка "frontend_css", в которой нужно указать файл стилей для подключения (#2).
 - [en] Added snippet parameter "tpl" to specify the dialog template chunk.
-- [ru] В сниппет добавлен параметр "tpl", указывающий чанк с шаблоном диалога.
 - [en] Added snippet parameter "tplButton" to specify the button template chunk.
-- [ru] В сниппет добавлен параметр "tplButton", указывающий чанк с шаблоном кнопки "Нашли ошибку?".
 - [en] Added snippet parameter "loadjGrowl" to load jGrowl notification library.
-- [ru] В сниппет добавлен параметр "loadjGrowl" для загрузки библиотеки уведомлений jGrowl.
 - [en] Added notification about successful transmission of the message.
+- [ru] Для устройств с сенсорным экраном добавлена кнопка "Уведомить об ошибке", которая появляется при выделении текста (#1).
+- [ru] Добавлена системная настройка "frontend_js", в которой нужно указать файл скриптов для подключения (#2).
+- [ru] Добавлена системная настройка "frontend_css", в которой нужно указать файл стилей для подключения (#2).
+- [ru] В сниппет добавлен параметр "tpl", указывающий чанк с шаблоном диалога.
+- [ru] В сниппет добавлен параметр "tplButton", указывающий чанк с шаблоном кнопки "Нашли ошибку?".
+- [ru] В сниппет добавлен параметр "loadjGrowl" для загрузки библиотеки уведомлений jGrowl.
 - [ru] Добавлено уведомление об успешной отправке сообщения об ошибке.
 
 1.0.2-pl
 ==============
 - [en] Increase length of the "resource_url" field from 40 to 100.
-- [ru] Увеличена длина поля "resource_url" с 40 до 100.
 - [en] Add button "Find a mistake?" to inform the users.
-- [ru] Добавлена информационная кнопка "Нашли ошибку?".
 - [en] Add a shortcut <Enter> to the Send button.
+- [ru] Увеличена длина поля "resource_url" с 40 до 100.
+- [ru] Добавлена информационная кнопка "Нашли ошибку?".
 - [ru] Добавлена горячая клавиша <Enter> для кнопки "Отправить".
 
 1.0.1-pl
 ==============
 - [en] Refactor css for compatibility with bootstrap.
-- [ru] Переработан css код для совместимости с bootstrap.
 - [en] Move jGrowl registration into snippet. So it can be switched off if it's already registered.
+- [ru] Переработан css код для совместимости с bootstrap.
 - [ru] Подключение библиотеки jGrowl вынесено в сниппет.
 
 1.0.0-pl
 ==============
 - [en] Fixed an error of displaying the confirm dialog in Firefox.
-- [ru] Исправлена ошибка отображения диалога в Firefox.
 - [en] Make some improvements.
+- [ru] Исправлена ошибка отображения диалога в Firefox.
 - [ru] Произведена оптимизация кода.
 
 1.0.0-rc2
 ==============
 - [en] Fixed an error in description of settings.
-- [ru] Исправлена ошибка в описании настроек.
 - [en] Fixed an error of saving comment.
+- [ru] Исправлена ошибка в описании настроек.
 - [ru] Исправлена ошибка сохранения комментария.
 
 1.0.0-rc1
 ==============
 - [en] Add the setting "auto_delete".
-- [ru] Добавлена системная настройка "auto_delete".
 - [en] Add link to resource in the list of mistakes.
+- [ru] Добавлена системная настройка "auto_delete".
 - [en] Добавлена ссылка на ресурс с ошибкой в списке ошибок.
 
 1.0.0-rc
